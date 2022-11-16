@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logan</title>
   <style>
     /* nav layout */
@@ -26,6 +27,7 @@
     li a:hover {
       background-color: #111;
     }
+
     /* color grad box */
     #grad {
       height: 2000px;
@@ -36,16 +38,61 @@
       border-radius: 25px;
 
     }
+
+    /* columns */
+    .column {
+      float: left;
+      width: 32.00%;
+      padding: 10px;
+    }
+
+    .column p {
+      outline-style: solid;
+      padding: 10px;
+    }
+
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width:600px) {
+      .column {
+        width: 100%;
+      }
+    }
   </style>
 
 </head>
 <body>
+<!-- navbar -->
 <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#about">About</a></li>
 </ul>
-<div id="grad"></div>
+<!-- columns -->
+<div id="grad" class="row">
+  <div class="column">
+    <h2>Column</h2>
+    <p>Column 1</p>
+  </div>
+
+  <div class="column">
+    <h2>Column</h2>
+    <p>Column 2</p>
+  </div>
+
+  <div class="column">
+    <h2>Column</h2>
+    <p>Column 3</p>
+  </div>
+</div>
+
 </body>
 </html>
